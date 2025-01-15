@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Daria Khon">
+<meta name="dcterms.date" content="2025-01-15">
 
-<title>Data Science Blog</title>
+<title>Creating my first end-to-end data science pipeline: lesson learned – Data Science Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Data Science Blog</span>
     </a>
   </div>
@@ -149,7 +91,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -162,122 +104,142 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Data Science Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Creating my first end-to-end data science pipeline: lesson learned</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">docker</div>
+                <div class="quarto-category">teamwork</div>
+                <div class="quarto-category">pipeline</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Daria Khon </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 15, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="docker">docker <span class="quarto-category-count">(2)</span></div><div class="category" data-category="pipeline">pipeline <span class="quarto-category-count">(2)</span></div><div class="category" data-category="teamwork">teamwork <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>Few years ago I was at school, doing my undergrad in chemical engineering and studying pipe design every day. Years passed, my career has changed and now I find myself once again intrigued by the pipelines, only this time the more elegant ones: data science pipelines.</p>
+<blockquote class="blockquote">
+<p>A data science pipeline is an end-to-end process of gathering raw data, transforming it into a format suitable for analysis, feeding it into a model, and obtaining results to answer specific questions.</p>
+</blockquote>
+<p>After the workflow has been constructed, it is also put into a <strong>reproducibility wrapper</strong>, which means automating the steps in the pipeline by using technologies like Docker containerization. If you had asked me about the data science workflow a few months ago, I would have stopped at the first part, the steps. However, as I learned with my recent project experience, the real challenge lies in achieving reproducibility through containerization.</p>
+<p>As such I want to share my two important lessons learned, and hope they can be helpful to anyone else who is starting on the data science journey.</p>
+<section id="two-key-lessons-stood-out-from-this-journey-that-i-will-go-over-in-this-blog" class="level3">
+<h3 class="anchored" data-anchor-id="two-key-lessons-stood-out-from-this-journey-that-i-will-go-over-in-this-blog">Two key lessons stood out from this journey that I will go over in this blog:</h3>
+<ol type="1">
+<li>Learning about Docker and using it for the first time. <br></li>
+<li>Recognizing that any team can excel when hinged on a fostering strong professional relationships.</li>
+</ol>
+</section>
+<section id="but-first-a-little-detour-to-provide-a-context-on-the-project-itself" class="level3">
+<h3 class="anchored" data-anchor-id="but-first-a-little-detour-to-provide-a-context-on-the-project-itself">But first, a little detour to provide a context on the project itself:</h3>
+My team and I built a predictive model for classifying wine color, red vs white, based on its physicochemical properties, such as acidity, pH, alcohol content, etc. We chose logistic regression for its simplicity, interpretability, and suitability for binary classification tasks. In this project, we build a reproducible pipeline that consisted of the following steps:
+<ul>
+<li>
+Collecting data from UCI Machine Learning Repository
+</li>
+<li>
+Cleaning and validating data
+</li>
+<li>
+Hyperparameter C optimization for Logistic Regression on F1-score (balancing out precision and recall)
+</li>
+<li>
+Results interpretation via confusion matrix, and Precision-Recall curve
+</li>
+<li>
+Incorporating unit tests for all our scripts
+</li>
+<li>
+Report generation with our methods, results and discussion
+</li>
+<li>
+Creating a virtual conda environment and a docker container for reproducibility
+</li>
+</ul>
+<p><strong>List of data science tools used:</strong> Scikit-learn, Docker, pytest, git <br> Check out our <a href="https://github.com/UBC-MDS/DSCI522-2425-22-wine-chromatic-profile/tree/main">github repo</a> for more details.</p>
+</section>
+<section id="lesson-1-learning-and-using-docker" class="level3">
+<h3 class="anchored" data-anchor-id="lesson-1-learning-and-using-docker">Lesson 1: Learning and using Docker</h3>
+<p>The key learning of completing this project was that no matter how well you design your model and code it, if a new person cannot reproduce it on their own, and corroborate your findings, all your effort goes void. The package versions, the operating system, and other factors all come into play when it comes to reproducibility, and luckily for us there is a way to lock it all in, wrap and send it to whoever you like - Docker.</p>
+<blockquote class="blockquote">
+<p>Docker is a software platform to create, run and manage containers. Containers are something like a virtual machine, in a sense that it has its operating system. However, unlike virtual machines, containers don’t simulate the entire computer, but rather create a sandboxed environment that behaves like a virtual machine.</p>
+</blockquote>
+<p>Docker containers are created from Docker <strong>“images”</strong>, which are blueprints of an application. These images are immutable once created and contain everything needed to run the application. To build a Docker image, you write instructions in a <strong>Dockerfile</strong>, a plain text file with no extension that is always named Dockerfile.</p>
+<p><strong>Here is an example of our docker file that created an image for running our analysis in a Jupyter Lab</strong> <img src="dockerfile.png" style="width:60%;"></p>
+<p><strong>Let’s break down what each line here means:</strong></p>
+<p><code>FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8</code> This line sets a base image for docker build: it ensures that the environment starts with a minimal Jupyter Notebook setup.</p>
+<p><code>COPY conda-linux-64.lock /tmp/conda-linux-64.lock</code> <code>COPY requirements.txt /tmp/requirements.txt</code> These lines install dependencies into the Docker image via local conda lock and requirements.txt files that contain specific package versions. Check out this article for more information about conda-lock files.</p>
+<p><code>USER root</code> followed by <code>USER $NB_UID</code> Switches user to <code>root</code>, which is required for installation of system level packages. And then switches it back to default non-root user once the required steps are completed.</p>
+<p><code>RUN</code> commands are then for actually installing system packages, dependencies, etc. that were mentioned above.</p>
+Looks simple enough, but if you are still confused about the process and what everything means, here is my approach for learning docker, which frankly just involves a lot of practice:
+<ol>
+<ol type="1">
+<li>Read this <a href="https://medium.com/@JeffyJeff/the-beginners-guide-to-docker-fa4c4d3181e7">Medium article</a> by Jean F Beaulieu</li>
+<li>Follow this <a href="https://www.youtube.com/watch?v=gAkwW2tuIqE">Youtube tutorial</a> to build your own toy Docker image<br>
+</li>
+<li>Experiment: try building a Dockerfile for a small project of your own, something you would be invested in, perhahps related to your hobby?<br>
+</li>
+<li>Finally, it helped me to think about the Docker file as <strong>layers of cake</strong>, or any other metaphore of sequenced build up you want to think about. The idea is that each command contributes a distinct layer, ultimately creating a complete and reproducible “recipe” for your project:
+</li></ol>
+<ul>
+<ul>
+<li>
+<code>FROM</code> command serves as the sponge cake base - the foundation on which everything else is built. It comes pre-baked (like the Jupyter Notebook image) with essential ingredients to ensure stability and consistency.
+</li>
+<li>
+<code>COPY</code> command serves as the filling and represents the critical flavors (dependencies) that make the cake unique. By copying these files into the container, we ensure the right ingredients are ready to blend into the final mix.
+</li>
+<li>
+<code>USER</code> switches are like switching between a master chef (root) and an assistant baker (default user). The master chef handles delicate tasks like preparing the tools (installing system-level packages), then hands over to the assistant for day-to-day operations.
+</li>
+<li>
+Once everything is assembled you are ready to run away with the <code>RUN</code> command (pun intended). These commands are like instructions on how to assemble the cake and how to bake it, so that a reproducible results is ready to be served.
+</li>
+</ul>
+</ul>
+<img src="cake.png" style="width:100%;">
+</ol>
+<p>By mastering Docker, you will not only streamline your workflows but also ensure your projects are sharable and reproducible. This is what will elevate a project from amateur to professional quality.</p>
+</section>
+<section id="lesson-2-invest-in-your-team-culture-if-you-want-good-teammates" class="level3">
+<h3 class="anchored" data-anchor-id="lesson-2-invest-in-your-team-culture-if-you-want-good-teammates">Lesson 2: Invest in your team culture, if you want good teammates</h3>
+<p>I have several years of project management experience, and one key principle I bring to every new team is the importance of coming together on day one to clearly define the goal, the time and effort we are willing to invest, and, most importantly, our preferred communication methods and frequency. It may sound trivial, but it’s often overlooked, especially in STEM fields where individuals are eager to take on developer roles but not always to foster effective teamwork.</p>
+<p>My team followed this approach from the start, and it made all the difference. Without it, we might not have found our rhythm, and the experience could have been very different. While I am not claiming this approach guarantees perfect collaboration, I can confidently say that since adopting it, I have yet to experience a truly challenging team dynamic.</p>
+<p>Thank you for stopping by, and hope you found some points of resonance while reading this!</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="docker,teamwork,pipeline" data-listing-date-sort="1736928000000" data-listing-file-modified-sort="1736966986659" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1120">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html" class="no-external"></a></p><a href="./posts/post-with-code/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/post-with-code/image.jpeg" class="thumbnail-image"></p>
-</a><p><a href="./posts/post-with-code/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/post-with-code/index.html" class="no-external">Creating my first end-to-end data science pipeline: lesson learned</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/post-with-code/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('docker'); return false;">
-docker
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('teamwork'); return false;">
-teamwork
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('pipeline'); return false;">
-pipeline
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/post-with-code/index.html" class="no-external">Few years ago I was at school, doing my undergrad in chemical engineering and studying pipe design every day. Years passed, my career has changed and now I find myself once…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2025
-</div>
-<div class="listing-author">
-Daria Khon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="docker,teamwork,pipeline" data-listing-date-sort="1736928000000" data-listing-file-modified-sort="1736966986659" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1120">
-<div class="thumbnail">
-<p><a href="./docs/posts/post-with-code/index.html" class="no-external"></a></p><a href="./docs/posts/post-with-code/index.html" class="no-external">
-<p><img loading="lazy" src="./docs/posts/post-with-code/image.jpeg" class="thumbnail-image"></p>
-</a><p><a href="./docs/posts/post-with-code/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./docs/posts/post-with-code/index.html" class="no-external">Creating my first end-to-end data science pipeline: lesson learned</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./docs/posts/post-with-code/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('docker'); return false;">
-docker
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('teamwork'); return false;">
-teamwork
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('pipeline'); return false;">
-pipeline
-</div>
-</div>
-<div class="listing-description">
-<a href="./docs/posts/post-with-code/index.html" class="no-external">Few years ago I was at school, doing my undergrad in chemical engineering and studying pipe design every day. Years passed, my career has changed and now I find myself once…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./docs/posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2025
-</div>
-<div class="listing-author">
-Daria Khon
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
