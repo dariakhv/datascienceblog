@@ -1,0 +1,19 @@
+---
+title: "About"
+image: photo2.jpg
+about:
+  template: jolla
+  links:
+    - icon: medium
+      text: Medium
+      href: https://medium.com/@daria.khon
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/dariakhon/?originalSubdomain=ca
+    - icon: github
+      text: Github
+      href: https://github.com/dariakhv
+
+---
+
+Hello, welcome to my blog! My name is Daria, I am currently pursuing Masters in Data Science at the University of British Columbia. My professional interests lie at the intersection of data and biotechnology, while my personal interests involve things like reading, skiing and playing volleyball.
