@@ -14,11 +14,11 @@ After the workflow has been constructed, it is also put into a **reproducibility
 
 As such I want to share my two important lessons learned, and hope they can be helpful to anyone else who is starting on the data science journey.
 
-### Two key lessons stood out from this journey that I will go over in this blog:
+### Two key lessons from this journey that I will go over in this blog:
 1. Learning about Docker and using it for the first time. <br>
 2. Recognizing that any team can excel when hinged on a fostering strong professional relationships.
 
-### But first, a little detour to provide a context on the project itself:
+### But first, a little detour to provide context on the project itself:
 
 My team and I built a predictive model for classifying wine color, red vs white, based on its physicochemical properties, such as acidity, pH, alcohol content, etc. We chose logistic regression for its simplicity, interpretability, and suitability for binary classification tasks. In this project, we build a reproducible pipeline that consisted of the following steps:
 <ul>
@@ -41,7 +41,7 @@ The key learning of completing this project was that no matter how well you desi
 
 Docker containers are created from Docker **“images”**, which are blueprints of an application. These images are immutable once created and contain everything needed to run the application. To build a Docker image, you write instructions in a **Dockerfile**, a plain text file with no extension that is always named Dockerfile.
 
-**Here is an example of our docker file that created an image for running our analysis in a Jupyter Lab**
+**Below is our docker file that created an image for running our analysis in a Jupyter Lab**
 <img src="dockerfile.png" style="width:60%;">
 
 **Let’s break down what each line here means:**

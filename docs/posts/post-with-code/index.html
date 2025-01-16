@@ -152,15 +152,15 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>After the workflow has been constructed, it is also put into a <strong>reproducibility wrapper</strong>, which means automating the steps in the pipeline by using technologies like Docker containerization. If you had asked me about the data science workflow a few months ago, I would have stopped at the first part, the steps. However, as I learned with my recent project experience, the real challenge lies in achieving reproducibility through containerization.</p>
 <p>As such I want to share my two important lessons learned, and hope they can be helpful to anyone else who is starting on the data science journey.</p>
-<section id="two-key-lessons-stood-out-from-this-journey-that-i-will-go-over-in-this-blog" class="level3">
-<h3 class="anchored" data-anchor-id="two-key-lessons-stood-out-from-this-journey-that-i-will-go-over-in-this-blog">Two key lessons stood out from this journey that I will go over in this blog:</h3>
+<section id="two-key-lessons-from-this-journey-that-i-will-go-over-in-this-blog" class="level3">
+<h3 class="anchored" data-anchor-id="two-key-lessons-from-this-journey-that-i-will-go-over-in-this-blog">Two key lessons from this journey that I will go over in this blog:</h3>
 <ol type="1">
 <li>Learning about Docker and using it for the first time. <br></li>
 <li>Recognizing that any team can excel when hinged on a fostering strong professional relationships.</li>
 </ol>
 </section>
-<section id="but-first-a-little-detour-to-provide-a-context-on-the-project-itself" class="level3">
-<h3 class="anchored" data-anchor-id="but-first-a-little-detour-to-provide-a-context-on-the-project-itself">But first, a little detour to provide a context on the project itself:</h3>
+<section id="but-first-a-little-detour-to-provide-context-on-the-project-itself" class="level3">
+<h3 class="anchored" data-anchor-id="but-first-a-little-detour-to-provide-context-on-the-project-itself">But first, a little detour to provide context on the project itself:</h3>
 My team and I built a predictive model for classifying wine color, red vs white, based on its physicochemical properties, such as acidity, pH, alcohol content, etc. We chose logistic regression for its simplicity, interpretability, and suitability for binary classification tasks. In this project, we build a reproducible pipeline that consisted of the following steps:
 <ul>
 <li>
@@ -194,7 +194,7 @@ Creating a virtual conda environment and a docker container for reproducibility
 <p>Docker is a software platform to create, run and manage containers. Containers are something like a virtual machine, in a sense that it has its operating system. However, unlike virtual machines, containers don’t simulate the entire computer, but rather create a sandboxed environment that behaves like a virtual machine.</p>
 </blockquote>
 <p>Docker containers are created from Docker <strong>“images”</strong>, which are blueprints of an application. These images are immutable once created and contain everything needed to run the application. To build a Docker image, you write instructions in a <strong>Dockerfile</strong>, a plain text file with no extension that is always named Dockerfile.</p>
-<p><strong>Here is an example of our docker file that created an image for running our analysis in a Jupyter Lab</strong> <img src="dockerfile.png" style="width:60%;"></p>
+<p><strong>Below is our docker file that created an image for running our analysis in a Jupyter Lab</strong> <img src="dockerfile.png" style="width:60%;"></p>
 <p><strong>Let’s break down what each line here means:</strong></p>
 <p><code>FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8</code> This line sets a base image for docker build: it ensures that the environment starts with a minimal Jupyter Notebook setup.</p>
 <p><code>COPY conda-linux-64.lock /tmp/conda-linux-64.lock</code> <code>COPY requirements.txt /tmp/requirements.txt</code> These lines install dependencies into the Docker image via local conda lock and requirements.txt files that contain specific package versions. Check out this article for more information about conda-lock files.</p>
